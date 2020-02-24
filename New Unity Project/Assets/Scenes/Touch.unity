@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 93097753}
   - component: {fileID: 93097752}
   m_Layer: 10
-  m_Name: Cube (3)
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 93097751}
-  ID: 0
+  ID: 6
 --- !u!65 &93097753
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 183655106}
   - component: {fileID: 183655105}
   m_Layer: 10
-  m_Name: Paper
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 248857836}
   - component: {fileID: 248857835}
   m_Layer: 10
-  m_Name: Cube (11)
+  m_Name: Human
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 248857834}
-  ID: 0
+  ID: 12
 --- !u!65 &248857836
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 308462229}
   - component: {fileID: 308462228}
   m_Layer: 10
-  m_Name: Cube (4)
+  m_Name: Air
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 308462227}
-  ID: 0
+  ID: 7
 --- !u!65 &308462229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 371931906}
   - component: {fileID: 371931905}
   m_Layer: 10
-  m_Name: Cube (13)
+  m_Name: Scissors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 371931904}
-  ID: 0
+  ID: 14
 --- !u!65 &371931906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -782,7 +782,7 @@ GameObject:
   - component: {fileID: 504548100}
   - component: {fileID: 504548099}
   m_Layer: 10
-  m_Name: Cube (2)
+  m_Name: Dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 504548098}
-  ID: 0
+  ID: 5
 --- !u!65 &504548100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 528178677}
   - component: {fileID: 528178676}
   m_Layer: 10
-  m_Name: Cube (9)
+  m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,7 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 528178675}
-  ID: 0
+  ID: 11
 --- !u!65 &528178677
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -998,7 +998,7 @@ GameObject:
   - component: {fileID: 630835955}
   - component: {fileID: 630835954}
   m_Layer: 10
-  m_Name: Cube (12)
+  m_Name: Snake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 630835953}
-  ID: 0
+  ID: 13
 --- !u!65 &630835955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 921571375}
   - component: {fileID: 921571374}
   m_Layer: 10
-  m_Name: Scissors
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1214,7 +1214,7 @@ GameObject:
   - component: {fileID: 1164659866}
   - component: {fileID: 1164659865}
   m_Layer: 10
-  m_Name: Cube (6)
+  m_Name: Paper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1234,7 +1234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 1164659864}
-  ID: 0
+  ID: 8
 --- !u!65 &1164659866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 1265139299}
   - component: {fileID: 1265139298}
   m_Layer: 10
-  m_Name: Cube (7)
+  m_Name: Sponge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1433,7 +1433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 1265139297}
-  ID: 0
+  ID: 9
 --- !u!65 &1265139299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1521,7 +1521,7 @@ GameObject:
   - component: {fileID: 1486985090}
   - component: {fileID: 1486985089}
   m_Layer: 10
-  m_Name: Cube (8)
+  m_Name: Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 1486985088}
-  ID: 0
+  ID: 10
 --- !u!65 &1486985090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1629,7 +1629,7 @@ GameObject:
   - component: {fileID: 1524913795}
   - component: {fileID: 1524913794}
   m_Layer: 10
-  m_Name: Cube (14)
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 1524913793}
-  ID: 0
+  ID: 15
 --- !u!65 &1524913795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1855,7 +1855,7 @@ GameObject:
   - component: {fileID: 1706856566}
   - component: {fileID: 1706856565}
   m_Layer: 10
-  m_Name: Cube (1)
+  m_Name: Devil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1875,7 +1875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 1706856564}
-  ID: 0
+  ID: 4
 --- !u!65 &1706856566
 BoxCollider:
   m_ObjectHideFlags: 0
