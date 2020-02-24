@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class DoShit : MonoBehaviour
 {
-    
+    public ContestManager contest;
+    public GameObject self;
+
     void OnTouchDown()
     {
         GetComponent<Renderer>().material.color = Color.green;
@@ -15,6 +17,14 @@ public class DoShit : MonoBehaviour
     }
     void OnTouchUp()
     {
+        if (contest.first != null)
+        {
+            contest.first = self.name;
+        }
+        else
+        {
+            contest.second = self.name;
+        }
         GetComponent<Renderer>().material.color = Color.blue;
     }
     void OnTouchExit()
