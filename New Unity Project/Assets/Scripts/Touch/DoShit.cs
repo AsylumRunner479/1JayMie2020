@@ -6,6 +6,7 @@ public class DoShit : MonoBehaviour
 {
     public ContestManager contest;
     public GameObject self;
+    public int ID;
 
     void OnTouchDown()
     {
@@ -17,14 +18,15 @@ public class DoShit : MonoBehaviour
     }
     void OnTouchUp()
     {
-        if (contest.first != null)
+        if (contest.first == 0)
         {
-            contest.first = self.name;
+            contest.first = ID;
         }
-        else
+        else if (contest.second == 0)
         {
-            contest.second = self.name;
+            contest.second = ID;
         }
+        
         GetComponent<Renderer>().material.color = Color.blue;
     }
     void OnTouchExit()

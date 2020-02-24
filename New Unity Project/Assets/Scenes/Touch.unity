@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 93097751}
+  ID: 0
 --- !u!65 &93097753
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -334,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 155255093}
+  ID: 1
 --- !u!1 &183655104
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 183655104}
+  ID: 2
 --- !u!65 &183655106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -475,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 248857834}
+  ID: 0
 --- !u!65 &248857836
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -582,6 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 308462227}
+  ID: 0
 --- !u!65 &308462229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -689,6 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 371931904}
+  ID: 0
 --- !u!65 &371931906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -796,6 +802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 504548098}
+  ID: 0
 --- !u!65 &504548100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -903,6 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 528178675}
+  ID: 0
 --- !u!65 &528178677
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1010,6 +1018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 630835953}
+  ID: 0
 --- !u!65 &630835955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1117,6 +1126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 921571373}
+  ID: 3
 --- !u!65 &921571375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1224,6 +1234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 1164659864}
+  ID: 0
 --- !u!65 &1164659866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1422,6 +1433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 1265139297}
+  ID: 0
 --- !u!65 &1265139299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1529,6 +1541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 1486985088}
+  ID: 0
 --- !u!65 &1486985090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1636,6 +1649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 1524913793}
+  ID: 0
 --- !u!65 &1524913795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1821,8 +1835,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d33878ff1d5614586a33dd3995c6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  first: 
-  second: 
+  first: 0
+  second: 0
+  hands:
+  - {fileID: 155255093}
+  - {fileID: 183655104}
+  - {fileID: 921571373}
 --- !u!1 &1706856564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,6 +1875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contest: {fileID: 1658995170}
   self: {fileID: 1706856564}
+  ID: 0
 --- !u!65 &1706856566
 BoxCollider:
   m_ObjectHideFlags: 0
