@@ -22,103 +22,174 @@ public class ContestManager : MonoBehaviour
             {
                 Debug.Log("Draw");
             }
-            if (first == 1)
+            else if (first != second)
             {
-                if (second <= 8)
-                            {
-                    Debug.Log("second wins");
-                }
-                else
+
+
+                if (first == 1)
                 {
-                    Debug.Log("first wins");
+                    if (second <= 8)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-            }
-            if (first == 2)
-            {
-                if (second <= 9 && second >= 2)
+                if (first == 2)
                 {
-                    Debug.Log("second wins");
+                    if (second <= 9 && second >= 2)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-                else
+                if (first == 3)
                 {
-                    Debug.Log("first wins");
+                    if (second <= 10 && second >= 3)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-            }
-            if (first == 3)
-            {
-                if (second <= 10 && second >= 3)
+                if (first == 4)
                 {
-                    Debug.Log("second wins");
+                    if (second <= 11 && second >= 4)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-                else
+                if (first == 5)
                 {
-                    Debug.Log("first wins");
+                    if (second <= 12 && second >= 5)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-            }
-            if (first == 4)
-            {
-                if (second <= 11 && second >= 4)
+                if (first == 6)
                 {
-                    Debug.Log("second wins");
+                    if (second <= 13 && second >= 6)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-                else
+                if (first == 7)
                 {
-                    Debug.Log("first wins");
+                    if (second <= 14 && second >= 7)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-            }
-            if (first == 5)
-            {
-                if (second <= 12 && second >= 5)
+                if (first == 8)
                 {
-                    Debug.Log("second wins");
+                    if (second <= 15 && second >= 8)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-                else
+                if (first == 9)
                 {
-                    Debug.Log("first wins");
+                    if (second >= 1 && second <= 9)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-            }
-            if (first == 6)
-            {
-                if (second <= 13 && second >= 6)
+                if (first == 10)
                 {
-                    Debug.Log("second wins");
+                    if (second >= 2 && second <= 10)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-                else
+                if (first == 11)
                 {
-                    Debug.Log("first wins");
+                    if (second >= 3 && second <= 11)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-            }
-            if (first == 7)
-            {
-                if (second <= 14 && second >= 7)
+                if (first == 12)
                 {
-                    Debug.Log("second wins");
+                    if (second >= 4 && second <= 12)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-                else
+                if (first == 13)
                 {
-                    Debug.Log("first wins");
+                    if (second >= 5 && second <= 13)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-            }
-            if (first == 8)
-            {
-                if (second <= 15 && second >= 8)
+                if (first == 14)
                 {
-                    Debug.Log("second wins");
+                    if (second >= 6 && second <= 14)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
-                else
+                if (first == 15)
                 {
-                    Debug.Log("first wins");
-                }
-            }
-            if (first == 9)
-            {
-                if (second >= 9 && second >= 9)
-                {
-                    Debug.Log("second wins");
-                }
-                else
-                {
-                    Debug.Log("first wins");
+                    if (second >= 7 && second <= 15)
+                    {
+                        Debug.Log("second wins");
+                    }
+                    else
+                    {
+                        Debug.Log("first wins");
+                    }
                 }
             }
             Debug.Log(first);
