@@ -7,7 +7,7 @@ public class ContestManager : MonoBehaviour
     public int first, second;
     // Start is called before the first frame update
     public GameObject[] hands;
-
+    public GameObject firstwins, secondwins, draw;
     public void Start()
     {
         first = 0;
@@ -18,9 +18,13 @@ public class ContestManager : MonoBehaviour
     {
         if ( first != 0 && second != 0)
         {
+            firstwins.SetActive(false);
+            secondwins.SetActive(false);
+            draw.SetActive(false);
             if (first == second)
             {
                 Debug.Log("Draw");
+                draw.SetActive(true);
             }
             else if (first != second)
             {
@@ -30,10 +34,12 @@ public class ContestManager : MonoBehaviour
                 {
                     if (second <= 8)
                     {
+                        secondwins.SetActive(true);
                         Debug.Log("second wins");
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -42,9 +48,11 @@ public class ContestManager : MonoBehaviour
                     if (second <= 9 && second >= 2)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -53,9 +61,11 @@ public class ContestManager : MonoBehaviour
                     if (second <= 10 && second >= 3)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -64,9 +74,11 @@ public class ContestManager : MonoBehaviour
                     if (second <= 11 && second >= 4)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -75,9 +87,11 @@ public class ContestManager : MonoBehaviour
                     if (second <= 12 && second >= 5)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -86,9 +100,11 @@ public class ContestManager : MonoBehaviour
                     if (second <= 13 && second >= 6)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -97,9 +113,11 @@ public class ContestManager : MonoBehaviour
                     if (second <= 14 && second >= 7)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -108,9 +126,11 @@ public class ContestManager : MonoBehaviour
                     if (second <= 15 && second >= 8)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -119,9 +139,11 @@ public class ContestManager : MonoBehaviour
                     if (second >= 1 && second <= 9)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -130,9 +152,11 @@ public class ContestManager : MonoBehaviour
                     if (second >= 2 && second <= 10)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -141,9 +165,11 @@ public class ContestManager : MonoBehaviour
                     if (second >= 3 && second <= 11)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -152,9 +178,11 @@ public class ContestManager : MonoBehaviour
                     if (second >= 4 && second <= 12)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -163,9 +191,11 @@ public class ContestManager : MonoBehaviour
                     if (second >= 5 && second <= 13)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -174,9 +204,11 @@ public class ContestManager : MonoBehaviour
                     if (second >= 6 && second <= 14)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
@@ -185,17 +217,19 @@ public class ContestManager : MonoBehaviour
                     if (second >= 7 && second <= 15)
                     {
                         Debug.Log("second wins");
+                        secondwins.SetActive(true);
                     }
                     else
                     {
+                        firstwins.SetActive(true);
                         Debug.Log("first wins");
                     }
                 }
             }
-            Debug.Log(first);
-            Debug.Log(second);
+            
             first = 0;
             second = 0;
+
         }  
         
         else

@@ -21,13 +21,15 @@ public class DoShit : MonoBehaviour
         if (contest.first == 0)
         {
             contest.first = ID;
+            GetComponent<Renderer>().material.color = Color.blue;
         }
         else if (contest.second == 0)
         {
             contest.second = ID;
+            GetComponent<Renderer>().material.color = Color.red;
         }
         
-        GetComponent<Renderer>().material.color = Color.blue;
+        
     }
     void OnTouchExit()
     {
