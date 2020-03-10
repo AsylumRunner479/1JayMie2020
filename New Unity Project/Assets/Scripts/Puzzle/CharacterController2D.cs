@@ -1,0 +1,215 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+public class CharacterController2D : MonoBehaviour
+{
+    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f; //Movement smoothing for the charactor
+    [SerializeField] private bool m_AirControl = false; //Allow control for character in the air
+    [SerializeField] private bool m_StickToSlopes = true; //Sitck to slopes to allow for easier controls
+    //[SerializeField] private LayerMask m_WhatIsGround;
+    [SerializeField] private Transform m_GroundCheck = null; //Ground check gameobject
+    [SerializeField] private Transform m_FrontCheck = null;  //Front check gameobject
+    [SerializeField] private float m_GroundedRadius = .05f;//Radius for ground check               
+    [SerializeField] private float m_FrontCheckRadius = .05f;//Radius for front check  
+    [SerializeField] private float m_GroundRayLength = .5f;//Radius for ground ray length check  
+
+
+    private float m_OriginalGravityScale;
+
+    [Header("Events")]
+    public UnityEvent OnLandEvent; //Unity event for when the character lands
+    
+    public bool IsGrounded; //Is the character grounded
+    public bool IsFrontBlocked { get; private set; } //Is the front of the character blocked
+    public bool IsFacingRight { get; private set; } = true; //Is the character facing right
+    public Rigidbody2D Rigidbody { get; private set; } //Character rigidbody
+    
+    public float Speed;
+    [Header("Abilites")]
+    public bool doubleJump = true;
+    public bool airTesting;
+    public bool glide = false;
+    public bool HasParameter(string paramName, Animator animator)
+    {
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.name == paramName)
+                return true;
+        }
+        return false;
+    }
+
+
+    private void Awake()
+    {
+        Speed = 0;
+        //Get rigidbody component and set into variable
+        Rigidbody = GetComponent<Rigidbody2D>();
+        //Get animator component and set into variable
+        
+        //Get rigidbody gravity scale and set into a variable 
+        m_OriginalGravityScale = Rigidbody.gravityScale;
+        //If OnLandEvent is null, Set it to equal a new unity event
+        if (OnLandEvent == null)
+            OnLandEvent = new UnityEvent();
+
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(m_GroundCheck.position, m_GroundedRadius);
+        Gizmos.DrawWireSphere(m_FrontCheck.position, m_FrontCheckRadius);
+        Ray groundRay = new Ray(transform.position, Vector3.down);
+        Gizmos.DrawLine(groundRay.origin, groundRay.origin + groundRay.direction * m_GroundRayLength);
+
+
+
+        //Gizmos.color = Color.red;
+        //Ray ladderRay = new Ray(m_LadderCheck.position, Vector3.up);
+        //Gizmos.DrawLine(ladderRay.origin, ladderRay.origin + ladderRay.direction * m_LadderRayLength);
+    }
+
+    private void FixedUpdate()
+    {
+        if (glide == true)
+        {
+            if (Rigidbody.velocity.y <= 0)
+            {
+                Rigidbody.gravityScale = 1f;
+            }
+            
+        }
+        else
+        {
+            
+            Rigidbody.gravityScale = 5f;
+        }
+        //Start the defualt animations
+      
+        //Change the bool wasGrounded to the state of IsGrounded
+        bool wasGrounded = IsGrounded;
+        //Change IsGounded to false
+        IsGrounded = false;
+        //Check for if the front is blocked to false
+        IsFrontBlocked = false;
+        //Add all the colliders within a circle area of ground check position to colliders
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, m_GroundedRadius);
+        //run check for every collider
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            //if the game object is not the player
+            if (colliders[i].gameObject != gameObject)
+            {
+                //Set IsGrounded to true
+                IsGrounded = true;
+                Rigidbody.gravityScale = 0f;
+                
+                
+                //If wasGrounded was false 
+                if (!wasGrounded)
+                    //Invoke OnLandEvent
+                    OnLandEvent.Invoke();
+            }
+        }
+        //Add all the colliders within a circle area of front check position to colliders
+        colliders = Physics2D.OverlapCircleAll(m_FrontCheck.position, m_FrontCheckRadius);
+        //run check for every collider
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            //if the game object is not the player
+            if (colliders[i].gameObject != gameObject)
+            {
+                //Set IsFrontBlocked to true
+                IsFrontBlocked = true;
+            }
+        }
+
+    }
+
+    //Default set of animations
+    
+
+    public void Landed()
+    {
+        if (IsGrounded)
+        {
+            glide = false;
+            airTesting = false;
+            //RigidbodyConstraints.FreezePositionY;
+        }
+    }
+
+    //When jump is trigged
+    public void Jump(float height)
+    {
+        if (!IsGrounded && doubleJump && !airTesting)
+        {
+            Rigidbody.AddForce(new Vector2(0.5f, height - Rigidbody.velocity.y), ForceMode2D.Impulse);
+            airTesting = true;
+            
+        }
+        else
+        if (IsGrounded && !airTesting)
+        {
+            IsGrounded = false;
+            Rigidbody.AddForce(new Vector2(0.5f, height + Rigidbody.velocity.y), ForceMode2D.Impulse);
+           
+        }
+        else
+        {
+
+        }
+
+
+    }
+    
+
+
+    public void Move(float offsetX)
+    {
+        //If Animator has parameter IsRuunning
+        //if (HasParameter("IsRunning", Anim))
+        //Set Bool for IsRUnning 
+        //Anim.SetBool("IsRunning", offsetX != 0);
+        //If IsGrounded is true as well as AirControl
+        if (IsGrounded || m_AirControl)
+        {
+            //If Stick to Slopes is true
+            if (m_StickToSlopes)
+            {
+                //Nre ray the points downward from the player
+                Ray groundRay = new Ray(transform.position, Vector3.down);
+                //Check what the raycast has hit and set it to a variable
+                RaycastHit2D groundHit = Physics2D.Raycast(groundRay.origin, groundRay.direction, m_GroundRayLength);
+                //If the raycast has hit something
+                if (groundHit.collider != null)
+                {
+                    //New Vector3 to find the slopes direction
+                    Vector3 slopeDirection = Vector3.Cross(Vector3.up, Vector3.Cross(Vector3.up, groundHit.normal));
+                    //set new variable slope thats the product of two vectors 
+                    float slope = Vector3.Dot(Vector3.right * offsetX, slopeDirection);
+                    //Calculate the slope added  to the of
+                    offsetX += offsetX * slope;
+                    //Get the float angle from the vector
+                    float angle = Vector2.Angle(Vector3.up, groundHit.normal);
+                    //If the angle is greater than 0
+                    if (angle > 0)
+                    {
+                        //Set Rigidbodys gravity to 0
+                        Rigidbody.gravityScale = 0;
+                        //Change Rigidbody velocity to new Vector2 using Velocity x
+                        Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, 0f);
+                    }
+                }
+            }
+            //
+            Vector3 targetVelocity = new Vector2(offsetX * (Speed + 1), Rigidbody.velocity.y);
+            //New Vector3 velocity
+            Vector3 velocity = Vector3.zero;
+            //Changes the rigidbody velocity 
+            Rigidbody.velocity = Vector3.SmoothDamp(Rigidbody.velocity, targetVelocity, ref velocity, m_MovementSmoothing);
+        }
+    }
+}
+
